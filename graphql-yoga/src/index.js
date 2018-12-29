@@ -22,7 +22,11 @@ const typeDefs = `
         twitterHandle: String
     }
 
-
+    type Post {
+        id: String!
+        title: String!
+        body: String        
+    }
 `;
 
 let links = [
@@ -37,7 +41,8 @@ const resolvers = {
   Query: {
     info: () => `This is the API of a Hackernews Clone`,
     feed: () => links,
-    author: () => Authors
+    author: () => Authors,
+    post: () => Posts
   }
 };
 
